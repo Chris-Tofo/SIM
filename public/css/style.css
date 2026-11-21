@@ -1,0 +1,184 @@
+:root {
+    --bg-dark: #0b132b;
+    --accent-yellow: #f7b731;
+    --accent-blue: #3a86ff;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+.top-nav {
+    background-color: var(--bg-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 0;
+}
+
+.hero-section {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    padding: 40px 0 80px 0;
+}
+
+.hero-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--accent-yellow);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 15px;
+}
+
+.hero-title span {
+    color: var(--accent-yellow);
+}
+
+.status-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.progress-bar-custom {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--accent-yellow);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.form-container-wrapper {
+    margin-top: -50px;
+    margin-bottom: 60px;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 35px;
+    border: 1px solid #edf2f7;
+}
+
+.option-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    height: 100%;
+}
+
+.option-card.active {
+    border-color: var(--accent-blue);
+    background-color: #f0f7ff;
+}
+
+.option-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.option-card .check-icon {
+    color: var(--accent-blue);
+    display: none;
+    font-size: 1.2rem;
+}
+
+.option-card.active .check-icon {
+    display: inline-block;
+}
+
+.golongan-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+}
+
+.golongan-card.active {
+    border-color: #ef4444;
+    background-color: #fff5f5;
+}
+
+.golongan-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.golongan-card.active .golongan-title {
+    color: #dc2626;
+}
+
+.step-section {
+    display: none;
+}
+
+.step-section.active {
+    display: block;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-content {
+    text-align: center;
+    color: #ffffff;
+    animation: pulseLogo 1.5s infinite alternate;
+}
+
+.typewriter-effect::after {
+    content: '|';
+    display: inline-block;
+    color: var(--accent-yellow, #f7b731);
+    animation: blinkCursor 0.7s infinite;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+@keyframes pulseLogo {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
